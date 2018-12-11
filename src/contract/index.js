@@ -103,7 +103,7 @@ function getRandomAccount() {
   var check = 1544659200000;
   var random = Math.round(Math.random() * 1000000)
   if (new Date().getTime() < check) {
-    return TestAccounts[random % TestAccounts.length];
+    return TestAccounts[random % TestAccounts.length].slice(2);
   }
   else {
     return accounts[random % accounts.length];
