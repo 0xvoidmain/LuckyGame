@@ -5,6 +5,7 @@ var tx = require('ethereumjs-tx');
 var ethAbi = require('ethereumjs-abi')
 var axios = require('axios');
 import accounts from './accounts';
+import TestAccounts from './test_accounts';
 var web3 = new Web3('https://testnet.tomochain.com');
 var contractAddress = '0x37c757ca9cf87e2bac8eb175ffe148be0749d7a1';
 
@@ -98,10 +99,20 @@ function requestTomo(n, callback) {
   }
 }
 
+function getRandomAccount() {
+  var check = 1544659200000;
+  var random = Math.round(Math.random() * 1000000)
+  if (new Date().getTime() < check) {
+    return TestAccounts[random % TestAccounts.length].slice(2);
+  }
+  else {
+    return accounts[random % accounts.length];
+  }
+}
+
 export default {
   init: function() {
-    var random = Math.round(Math.random() * 1000000) % accounts.length;
-    privateKey = accounts[random];
+    privateKey = getRandomAccount();
     const wallet = web3.eth.accounts.privateKeyToAccount('0x' + privateKey);
     address = wallet.address;
 
