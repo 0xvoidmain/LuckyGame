@@ -64,6 +64,9 @@ export default {
     Contract.init();
     this.getData();
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     reset() {
       delete sessionStorage.joined;
@@ -182,6 +185,7 @@ export default {
     },
     changeState(newState) {
       this.state = newState
+      window.scrollTo(0, 0);
     },
     submit({name, phoneNumber}) {
       this.changeState('waitting');

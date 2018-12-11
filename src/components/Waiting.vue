@@ -1,8 +1,8 @@
 <template>
   <div class="waiting">
     <div class="waiting-text">
-      <div class="orange f40">Wait a bit</div>
-      <div class="waiting-text-sub">we are preparing for you...</div>
+      <div class="orange f40 fadeInUp animated">Wait a bit</div>
+      <div class="waiting-text-sub fadeInUp animated delay-1s">we are preparing for you...</div>
     </div>
   </div>
 </template>
