@@ -1,5 +1,5 @@
 <template>
-  <div class="game">
+  <div class="game fadeIn animated">
     <div class="game-price">
       <img src="../assets/giftbox.svg" class="game-gift-icon" />
       <span class="orange">100<span class="f25"> TOMO</span></span>

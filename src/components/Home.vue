@@ -1,15 +1,15 @@
 <template>
   <div class="home">
-    <div class="home-text">
+    <div class="home-text fadeIn animated">
       Join the lucky game for a chance to receive
       <br/><span class="orange"><span class="f40">100</span> TOMO</span>
     </div>
     <div v-if="!winner && (finishBlock > currentBlock)" >
-      <button class="btn" @click="$emit('join')">Join now</button>
-      <a v-if="isJoined" class="home-go-to-game" @click="$emit('game')">view result</a>
+      <button class="btn fadeIn animated delay-1s" @click="$emit('join')">Join now</button>
+      <a v-if="isJoined" class="home-go-to-game fadeIn animated delay-1s" @click="$emit('game')">view result</a>
     </div>
     <div v-else>
-      <button class="btn" @click="$emit('game')">View result</button>
+      <button class="btn fadeIn animated delay-1s" @click="$emit('game')">View result</button>
     </div>
   </div>
 </template>

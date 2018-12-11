@@ -1,21 +1,21 @@
 <template>
   <div class="info">
     <div class="info-text">
-      <div v-if="isEnterName">
+      <div v-if="isEnterName" class="fadeIn animated">
         What's your name?
         <textarea ref="name" class="input"
           placeholder="Your name"
           rows="2" v-model="name"
           @keypress="keyPress"/>
       </div>
-      <div v-else>
+      <div v-else class="fadeIn animated">
         What's your phone number?
         <input ref="phone" type="tel" class="input info-phone"
           placeholder="Phone number" rows="2" v-model="phoneNumber"
           @keypress="keyPress" />
       </div>
     </div>
-    <button class="btn" @click="next">Next</button>
+    <button class="btn fadeIn animated delay-1s" @click="next">Next</button>
     <div v-if="error" class="info-error">
       {{error}}
     </div>
@@ -61,6 +61,7 @@ export default {
         setTimeout(() => {
           this.$refs.phone.focus();
         }, 300);
+        window.scrollTo(0, 0);
       }
       else {
         this.phoneNumber = this.phoneNumber.trim()
@@ -98,12 +99,12 @@ export default {
 }
 
 .info-text {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 25px;
 }
 
 .info-phone {
-  padding-bottom: 53px !important;
+  padding-bottom: 33px !important;
 }
 
 .info-error {
