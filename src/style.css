@@ -1,0 +1,134 @@
+body {
+  margin: 0px;
+}
+#app {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  font-size: 17px;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+  margin: 25px;
+}
+
+.main-container {
+  min-height: calc(100vh - 180px);
+  padding-top: 75px;
+}
+
+@media(min-width: 768px) {
+  .main-container {
+    max-width: 700px;
+    min-height: calc(100vh - 180px);
+    padding-top: 75px;
+    margin: auto;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: auto;
+  }
+}
+
+.orange {
+  color: #F36E2B;
+}
+
+.black {
+  color: #333333;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn {
+  width: 200px;
+  height: 51px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #F36E2B;
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  position: relative;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: left;
+  outline: none;
+}
+
+.btn::after {
+  content: ' ';
+  position: absolute;
+  background-image: url(./assets/left-arrow.svg);
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input {
+  font-size: 40px;
+  color: #F36E2B;
+  border: none;
+  background: transparent;
+  outline: none;
+  resize: none;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  margin-top: 25px;
+  width: 100%;
+  padding: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(243, 110, 43, 0.5);
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(243, 110, 43, 0.5);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(243, 110, 43, 0.5);
+}
+
+.f14 {
+  font-size: 14px;
+}
+
+.f17 {
+  font-size: 17px;
+}
+
+.f25 {
+  font-size: 25px;
+}
+
+.f40 {
+  font-size: 40px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(243, 110, 43, 0.8);
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.title::before {
+  content: ' ';
+  width: 7px;
+  height: 20px;
+  position: absolute;
+  left: -15px;
+  background: #f36e2c;
+}
