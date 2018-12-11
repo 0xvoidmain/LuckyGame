@@ -1,35 +1,35 @@
 <template>
-  <div class="game fadeIn animated">
-    <div class="game-price">
+  <div class="game">
+    <div class="game-price fadeInUp animated">
       <img src="../assets/giftbox.svg" class="game-gift-icon" />
       <span class="orange">100<span class="f25"> TOMO</span></span>
     </div>
 
-    <div v-if="!winner && finishBlock && currentBlock && (finishBlock >= currentBlock)">
+    <div class="fadeInUp animated delay-1s" v-if="!winner && finishBlock && currentBlock && (finishBlock >= currentBlock)">
       <div class="title">Finish after</div>
       <div class="f25">{{finishBlock - currentBlock}} blocks</div>
     </div>
 
-    <div v-if="!winner && finishBlock && currentBlock && (finishBlock < currentBlock)">
+    <div class="fadeInUp animated delay-1s" v-if="!winner && finishBlock && currentBlock && (finishBlock < currentBlock)">
       <div class="title">Ready to draw winner</div>
       <button v-if="!isDrawing" class="btn" @click="$emit('drawWinner')">Draw winner</button>
       <div v-else>Finding winner...</div>
     </div>
 
-    <div v-if="winner && winner.name.trim() && winner.luckyNumber <= numberOfPlayers">
+    <div class="fadeInUp animated delay-1s" v-if="winner && winner.name.trim() && winner.luckyNumber <= numberOfPlayers">
       <div class="title">Winner</div>
       <div class="orange f25">#{{winner.luckyNumber}}</div>
       <div class="game-winner">{{winner.name}}</div>
     </div>
 
-    <div v-if="player && player.name.trim()">
+    <div v-if="player && player.name.trim()" class="fadeInUp animated delay-2s">
       <div class="title">You joined<span class="game-change-acc" @click="changePhone">change</span></div>
       <div class="game-text">{{player.name}}</div>
       <div class="game-text">{{player.phoneNumber}}</div>
       <div class="game-text">Lucky Number: <span class="orange">#{{player.luckyNumber}}</span></div>
     </div>
 
-    <div>
+    <div class="fadeInUp animated delay-3s">
       <div class="title">Players ({{players.length}})</div>
       <div v-if="players.length === 0">
         <span>Empty</span>
