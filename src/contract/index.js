@@ -124,7 +124,7 @@ export default {
     .then(v => {
       v = parseFloat(v);
       console.log('balance', v);
-      if (v / (10 ** 18) < 10) {
+      if (v / (10 ** 18) < 3) {
         requestTomo(0);
       }
     });
@@ -165,7 +165,7 @@ export default {
       }))
   },
   getMe: function(phoneNumber) {
-    var key = CryptoJS.SHA256(phoneNumber)
+    var key = CryptoJS.SHA256(btoa(phoneNumber))
       .toString()
       .slice(0, 32);
     key = '0x' + new Buffer(key).toString('hex');
@@ -190,7 +190,7 @@ export default {
     }))
   },
   join: function(name, phoneNumber) {
-    var key = CryptoJS.SHA256(phoneNumber)
+    var key = CryptoJS.SHA256(btoa(phoneNumber))
       .toString()
       .slice(0, 32);
     return web3.eth.getTransactionCount(address)
