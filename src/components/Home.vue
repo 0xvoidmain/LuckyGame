@@ -6,7 +6,8 @@
     </div>
     <div v-if="!winner && (finishBlock > currentBlock)" >
       <button class="btn fadeInUp animated delay-1s" @click="$emit('join')">Join now</button>
-      <a v-if="isJoined" class="home-go-to-game fadeInUp animated delay-1s" @click="$emit('game')">view result</a>
+      <br/>
+      <a v-if="isJoined" class="home-go-to-game fadeInUp animated delay-2s" @click="$emit('game')">view result</a>
     </div>
     <div v-else>
       <button class="btn fadeInUp animated delay-1s" @click="$emit('game')">View result</button>
@@ -31,7 +32,7 @@ export default {
 
 .home-go-to-game {
   margin-top: 10px;
-  display: block;
+  display: inline-block;
   color: #F36E2B;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
