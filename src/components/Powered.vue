@@ -1,5 +1,5 @@
 <template>
-  <div class="powered">
+  <div class="powered fadeInUp animated delay-3s">
     <div class="container">
       Powered by <span @click="openSecretFunction">TomoChain</span> · <a href="https://github.com/tunght91/LuckyGame" target="_blank">GitHub</a> · <a href="https://scan.testnet.tomochain.com/address/0x37c757ca9cf87e2bac8eb175ffe148be0749d7a1#code" target="_blank">Contract</a></div>
     </div>
@@ -61,7 +61,11 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  margin-top: 35px;
+  left: 25px;
+  right: 25px;
+  bottom: 0;
+  padding: 10px 0;
+  position: fixed;
 }
 
 .powered a {
