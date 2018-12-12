@@ -13,15 +13,12 @@ body {
 }
 
 .main-container {
-  min-height: calc(100vh - 180px);
   padding-top: 75px;
 }
 
 @media(min-width: 768px) {
   .main-container {
     max-width: 700px;
-    min-height: calc(100vh - 180px);
-    padding-top: 75px;
     margin: auto;
   }
 

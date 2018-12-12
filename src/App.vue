@@ -23,7 +23,7 @@
         @drawWinner="drawWinner"
         @changePhone="changePhone"/>
     </div>
-    <Powered />
+    <Powered v-if="state !== 'game'" />
   </div>
 </template>
 
@@ -88,19 +88,23 @@ export default {
       this.getData();
     },
     getData() {
-      Contract.getMe(this.phoneNumber)
-      .then(v => {
-        this.player = {
-          name: v.name,
-          luckyNumber: v.luckyNumber,
-          phoneNumber: sessionStorage.phoneNumber
-        };
-      })
-      .catch(ex => {});
-
+      this.getMe(this.phoneNumber);
       this.getWinner();
       this.getPlayers();
       this.getDuration();
+    },
+    getMe(phoneNumber) {
+      return Contract.getMe(phoneNumber)
+      .then(v => {
+        if (v.name.trim()) {
+          this.player = {
+            name: v.name,
+            luckyNumber: v.luckyNumber,
+            phoneNumber: phoneNumber
+          };
+        }
+      })
+      .catch(ex => {});
     },
     drawWinner() {
       this.isDrawing = true;
@@ -171,17 +175,7 @@ export default {
       });
     },
     changePhone(phoneNumber) {
-      Contract.getMe(phoneNumber)
-      .then(v => {
-        if (v.name.trim()) {
-          this.player = {
-            name: v.name,
-            luckyNumber: v.luckyNumber,
-            phoneNumber: phoneNumber
-          };
-        }
-      })
-      .catch(ex => {});
+      this.getMe(phoneNumber);
     },
     changeState(newState) {
       this.state = newState
@@ -192,13 +186,8 @@ export default {
       this.name = name;
       this.phoneNumber = phoneNumber;
       Contract.join(name, phoneNumber)
-      .then(() => Contract.getMe(phoneNumber))
-      .then(v => {
-        this.player = {
-          name: v.name,
-          luckyNumber: v.luckyNumber,
-          phoneNumber: sessionStorage.phoneNumber
-        };
+      .then(() => this.getMe(phoneNumber))
+      .then(() => {
         sessionStorage.joined = true;
         this.changeState('game');
       })
