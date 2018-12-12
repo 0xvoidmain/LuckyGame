@@ -5,7 +5,7 @@
       <Home v-if="state === 'home'"
         @join="changeState('info')"
         @game="changeState('game')"
-        :isJoined="isJoined"
+        :isJoined="true"
         :winner="winner"
         :finishBlock="finishBlock"
         :currentBlock="currentBlock"

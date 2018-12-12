@@ -28,6 +28,10 @@
       <div class="game-text">{{player.phoneNumber}}</div>
       <div class="game-text">Lucky Number: <span class="orange">#{{player.luckyNumber}}</span></div>
     </div>
+    <div v-else class="fadeInUp animated delay-2s">
+      <div class="title">Login</div>
+      <button class="btn" @click="changePhone">Phone Number</button>
+    </div>
 
     <div class="fadeInUp animated delay-3s">
       <div class="title">Players ({{players.length}})</div>
