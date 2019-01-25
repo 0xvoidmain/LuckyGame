@@ -198,7 +198,7 @@ export default {
       var txOptions = {
         from: address,
         nonce: web3.utils.toHex(nonce),
-        gasLimit: web3.utils.toHex(200000),
+        gasLimit: web3.utils.toHex(500000),
         gasPrice: web3.utils.toHex(web3.utils.toWei('2500', 'gwei')),
         to: contractAddress
       }
@@ -212,7 +212,7 @@ export default {
       var txOptions = {
         from: address,
         nonce: web3.utils.toHex(nonce),
-        gasLimit: web3.utils.toHex(200000),
+        gasLimit: web3.utils.toHex(500000),
         gasPrice: web3.utils.toHex(web3.utils.toWei('2500', 'gwei')),
         to: contractAddress
       }
@@ -226,7 +226,7 @@ export default {
       var txOptions = {
         from: address,
         nonce: web3.utils.toHex(nonce),
-        gasLimit: web3.utils.toHex(2000000),
+        gasLimit: web3.utils.toHex(10000000),
         gasPrice: web3.utils.toHex(web3.utils.toWei('2500', 'gwei')),
         to: contractAddress
       }
